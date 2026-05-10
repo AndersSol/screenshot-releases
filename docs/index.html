@@ -1,3 +1,199 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>Screenshot</title></head>
-<body><p>Landing page kommer ved første release.</p></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screenshot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --grey: #4D575D;
+  --green: #008A00;
+  --light: #EDEEEE;
+  --muted: #9aa3a8;
+  --max: 760px;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  color: var(--grey);
+  background: #fff;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+}
+header {
+  border-bottom: 4px solid var(--green);
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--grey);
+}
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 40px 0 12px;
+  color: var(--grey);
+}
+p { margin: 0 0 14px; }
+code, kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+}
+kbd {
+  display: inline-block;
+  background: var(--light);
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: var(--grey);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  margin: 8px 0 16px;
+}
+th, td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--light);
+}
+th {
+  font-weight: 700;
+  background: var(--light);
+}
+
+ol, ul { padding-left: 22px; }
+ol li, ul li { margin-bottom: 6px; }
+
+.cta {
+  background: var(--green);
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+.cta:hover { filter: brightness(1.08); text-decoration: none; }
+
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.checksum {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  word-break: break-all;
+}
+</style>
+</head>
+<body>
+
+<main>
+
+<header>
+  <h1>Screenshot</h1>
+</header>
+
+<p>A small macOS menubar app for screenshots. Three global hotkeys, a preview, two outcomes — clipboard or file.</p>
+
+<h2>Hotkeys</h2>
+<table>
+  <thead><tr><th>Key</th><th>Mode</th></tr></thead>
+  <tbody>
+    <tr><td><kbd>⌘⇧1</kbd></td><td>Full screen</td></tr>
+    <tr><td><kbd>⌘⇧2</kbd></td><td>Window — click the window</td></tr>
+    <tr><td><kbd>⌘⇧3</kbd></td><td>Region — drag a rectangle</td></tr>
+  </tbody>
+</table>
+<p>In the preview: <kbd>S</kbd> saves to Downloads, <kbd>C</kbd> copies to clipboard, <kbd>Esc</kbd> cancels. <kbd>⌘Z</kbd> undoes.</p>
+
+<h2>Editor</h2>
+<p>Inline tools in the preview window:</p>
+<ul>
+  <li><strong>Marker</strong> — semi-transparent yellow highlight, additive.</li>
+  <li><strong>Skjul</strong> — 14 px mosaic redaction. Classic "redacted" look that can't be reconstructed.</li>
+  <li><strong>Beskjær</strong> — drag the rectangle around what you want to keep; everything outside is cropped.</li>
+</ul>
+<p>For browser windows (<kbd>⌘⇧2</kbd>), the app queries macOS Accessibility for the page content frame and auto-crops the URL bar / tabs / bookmarks. "Vis hele vinduet" rolls back the crop.</p>
+
+<h2>Install</h2>
+<ol>
+  <li>Download <code>Screenshot.dmg</code> below.</li>
+  <li>Open it, drag <code>Screenshot.app</code> to Applications.</li>
+  <li>Launch it. Onboarding asks for two macOS permissions:
+    <ul>
+      <li><strong>Accessibility</strong> for global hotkeys</li>
+      <li><strong>Screen Recording</strong> for the actual capture</li>
+    </ul>
+  </li>
+  <li>Click "Aktiver tilganger" — macOS native prompts walk you straight into System Settings.</li>
+</ol>
+<p>
+  <a id="download-cta" class="cta" href="#" rel="noopener">Download Screenshot.dmg</a>
+</p>
+<p class="meta" id="version-meta">Loading version info…</p>
+<p class="checksum" id="checksum-meta"></p>
+
+<h2>Limits</h2>
+<ul>
+  <li>No annotations beyond highlight / redact / crop. Use Preview.app for arrows or text.</li>
+  <li>No cloud upload.</li>
+  <li>Hard-coded save path <code>~/Downloads</code> and hotkeys <kbd>⌘⇧1/2/3</kbd>.</li>
+  <li>macOS 12+, Apple Silicon.</li>
+</ul>
+
+</main>
+
+<script>
+  // Pull the latest release info from latest.json (written by CI on every
+  // tag push). If the file isn't there yet, fall back to a generic GitHub
+  // releases link.
+  (async () => {
+    const cta = document.getElementById('download-cta');
+    const meta = document.getElementById('version-meta');
+    const sumEl = document.getElementById('checksum-meta');
+    try {
+      const res = await fetch('latest.json', { cache: 'no-cache' });
+      if (!res.ok) throw new Error('no latest.json');
+      const data = await res.json();
+      cta.href = data.url;
+      const date = new Date(data.released);
+      const dateStr = date.toLocaleDateString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric'
+      });
+      meta.textContent = `Version ${data.version} — released ${dateStr}`;
+      if (data.sha256) {
+        sumEl.textContent = `SHA-256: ${data.sha256}`;
+      }
+    } catch (e) {
+      meta.textContent = 'No release published yet.';
+      cta.style.opacity = 0.5;
+      cta.style.pointerEvents = 'none';
+    }
+  })();
+</script>
+
+</body>
+</html>

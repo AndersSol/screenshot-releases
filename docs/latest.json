@@ -1,1 +1,6 @@
-{"version":"0.0.0","url":"","sha256":"","released":"1970-01-01T00:00:00Z","note":"placeholder before first release"}
+{
+  "version": "0.0.1-smoketest-1778419940",
+  "url": "https://github.com/AndersSol/screenshot-releases/releases/download/v0.0.1-smoketest-1778419940/Screenshot.dmg",
+  "sha256": "189fcea6784525ed5f8b62bdf61d875b1704ec85a5004bd39df58ef65d3a7c70",
+  "released": "2026-05-10T13:34:28Z"
+}
