@@ -3,16 +3,16 @@
     "schemaVersion": 1,
     "appId": "no.skapnerden.screenshot",
     "channel": "stable",
-    "version": "0.8.2",
-    "build": "0.8.2",
+    "version": "0.8.3",
+    "build": "0.8.3",
     "minOS": "12.0",
-    "url": "https://github.com/AndersSol/screenshot-releases/releases/download/v0.8.2/Screenshot-0.8.2.dmg",
-    "sha256": "07bc8f339c6c1dccf9a9f7f2a5f404fa7b12486d6dc6f197bee4bf91b1d502b1",
-    "size": 46319489,
-    "notBefore": "2026-05-10T21:06:42Z",
-    "publishedAt": "2026-05-10T21:06:42Z",
-    "expires": "2026-08-08T21:06:42Z",
-    "releaseId": "v0.8.2-e2b61e5"
+    "url": "https://github.com/AndersSol/screenshot-releases/releases/download/v0.8.3/Screenshot-0.8.3.dmg",
+    "sha256": "ce0bfd44640af1a0cf54eb8b7603584c7d4c8a8f9deb226205b61755bfadf941",
+    "size": 46319536,
+    "notBefore": "2026-05-10T21:11:05Z",
+    "publishedAt": "2026-05-10T21:11:05Z",
+    "expires": "2026-08-08T21:11:05Z",
+    "releaseId": "v0.8.3-73576a3"
   },
-  "signature": "qqEhuzqtYlhc2MgNYmHpVUWVWIa2No3J02cfVigHEQ42PfHJ+L34TkRZevHPOES1zGITNHBoAiJAjzacdEe4AQ=="
+  "signature": "e9kSqj4kQfbgVFIw3XWHCZqESjMELqsLtSX/KXKJ7WrFbFOhNz+UULp+AzXlGYS+nY1/pjeav41VYe6BowugDQ=="
 }
