@@ -140,18 +140,20 @@ ol li, ul li { margin-bottom: 6px; }
 
 <h2>Install</h2>
 <ol>
-  <li>Download <code>Screenshot.dmg</code> below.</li>
-  <li>Open it, drag <code>Screenshot.app</code> to Applications.</li>
-  <li>Launch it. Onboarding asks for two macOS permissions:
+  <li>Download the DMG below.</li>
+  <li>Open it, double-click <code>Screenshot.app</code>.</li>
+  <li>The app installs itself to <code>~/Applications</code> (or
+      <code>/Applications</code> if you have admin), then launches.</li>
+  <li>Onboarding asks for two macOS permissions:
     <ul>
       <li><strong>Accessibility</strong> for global hotkeys</li>
       <li><strong>Screen Recording</strong> for the actual capture</li>
     </ul>
   </li>
-  <li>Click "Grant access" — macOS native prompts walk you straight into System Settings.</li>
+  <li>Click "Grant access" — System Settings opens on the right page.</li>
 </ol>
 <p>
-  <a id="download-cta" class="cta" href="#" rel="noopener">Download Screenshot.dmg</a>
+  <a id="download-cta" class="cta" href="#" rel="noopener">Download</a>
 </p>
 <p class="meta" id="version-meta">Loading version info…</p>
 <p class="checksum" id="checksum-meta"></p>
@@ -179,6 +181,11 @@ ol li, ul li { margin-bottom: 6px; }
       if (!res.ok) throw new Error('no latest.json');
       const data = await res.json();
       cta.href = data.url;
+      // The DMG filename is versioned (e.g. Screenshot-0.7.6.dmg).
+      // Surface it on the button so users can confirm what they're
+      // getting before they click.
+      const filename = data.url.split('/').pop();
+      cta.textContent = `Download ${filename}`;
       const date = new Date(data.released);
       const dateStr = date.toLocaleDateString('en-US', {
         year: 'numeric', month: 'short', day: 'numeric'
