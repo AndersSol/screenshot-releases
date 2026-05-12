@@ -3,16 +3,16 @@
     "schemaVersion": 1,
     "appId": "no.skapnerden.screenshot",
     "channel": "stable",
-    "version": "0.10.1",
-    "build": "0.10.1",
+    "version": "0.10.2",
+    "build": "0.10.2",
     "minOS": "12.0",
-    "url": "https://github.com/AndersSol/screenshot-releases/releases/download/v0.10.1/Screenshot-0.10.1.dmg",
-    "sha256": "6a197a5945d0bfbb789224f2522a7e7003aadbb98b1c30f279e00fe72d304154",
-    "size": 70980616,
-    "notBefore": "2026-05-12T08:00:30Z",
-    "publishedAt": "2026-05-12T08:00:30Z",
-    "expires": "2026-08-10T08:00:30Z",
-    "releaseId": "v0.10.1-e16e60b"
+    "url": "https://github.com/AndersSol/screenshot-releases/releases/download/v0.10.2/Screenshot-0.10.2.dmg",
+    "sha256": "4e63d5e458fe3bfe764dfb4ef90b3c14ef2b90adc834deec845ab5c3048ce24d",
+    "size": 70974486,
+    "notBefore": "2026-05-12T13:52:26Z",
+    "publishedAt": "2026-05-12T13:52:26Z",
+    "expires": "2026-08-10T13:52:26Z",
+    "releaseId": "v0.10.2-dae2f9f"
   },
-  "signature": "ARc3mX3B0EP/3InPpyCTEURq4MgA/gQFrlKsXUiglwgzG5DIVa44sy8i63VxH9Yfq0WRC2jBkdl1wGVIUmEKCg=="
+  "signature": "U62xoOv7qZrJTTq1BkBIDVgNZE/+JItx0xuZG2q2LJ6ePXdfMyCB1OKdfVXpcQ/1H80FPfty+b6H2h4jKoVBBw=="
 }
